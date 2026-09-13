@@ -95,11 +95,11 @@ Plataforma web gastronómica enfocada en la presentación de un catálogo de com
 **Tecnologías:** HTML5 · CSS3 · JavaScript · Bootstrap 5
 
 🔗 [Repositorio](https://github.com/SneyderRodriguez/FRITICOS-COLOMBIA.git)
-🌐 [Demo](https://friticos-colombia.vercel.app/)
+🌐 [Demo](https://friticoscolombia.netlify.app/)
 
 ---
 
-### 🐾 Patitas Felices
+### 🐾 Red Peluda
 
 Plataforma web orientada a la adopción de mascotas, diseñada para facilitar la visualización de animales disponibles y el proceso de solicitud de adopción.
 
@@ -116,8 +116,8 @@ Plataforma web orientada a la adopción de mascotas, diseñada para facilitar la
 
 **Tecnologías:** HTML5 · CSS3 · Bootstrap 5 · JavaScript
 
-🔗 [Repositorio](https://github.com/SneyderRodriguez/PATITAS-FELICES.git)
-🌐 [Demo](https://patitas-felices-tau.vercel.app/)
+🔗 [Repositorio](https://github.com/SneyderRodriguez/RED-PELUDA.git)
+🌐 [Demo](https://redpeluda.netlify.app/)
 
 ---
 
@@ -139,7 +139,7 @@ Plataforma web desarrollada para representar un colectivo gastronómico local y 
 **Tecnologías:** HTML5 · CSS3 · Bootstrap 5 · JavaScript
 
 🔗 [Repositorio](https://github.com/SneyderRodriguez/SABORES-DE-LA-PLAZA.git)
-🌐 [Demo](https://sabores-de-la-plaza.vercel.app/)
+🌐 [Demo](https://saboresplaza.netlify.app/)
 
 ---
 
@@ -164,7 +164,7 @@ Aplicación web para la gestión y organización de tareas personales.
 **Tecnologías:** HTML5 · CSS3 · JavaScript ES6+
 
 🔗 [Repositorio](https://github.com/SneyderRodriguez/Planificador-Tareas.github.io.git)
-🌐 [Demo](https://sneyderrodriguez.github.io/Planificador-Tareas.github.io/)
+🌐 [Demo](https://planificadortareas.netlify.app/)
 
 ---
 

@@ -1,34 +1,51 @@
 #skills {
-    padding: 2rem 2.5rem 4rem;
-
+    padding: 2rem 2.5rem 1rem;
 }
 
 .skill-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2.5rem 2rem;
+    padding: 0 2.5rem;
 }
 
 .skill-title {
     width: fit-content;
-    margin-right: auto;
+    margin-bottom: clamp(3rem, 6vh, 5rem);
 }
 
 .skill-title h2 {
     font-family: var(--font-title);
     font-size: clamp(2.4rem, 4vw, 3.4rem);
     color: var(--textoprincipal);
+    margin-bottom: 0.8rem;
 }
 
+.skill-title h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    margin-top: 12px;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        var(--azumagico),
+        transparent
+    );
+}
+.skill-tree-wrapper {
+    width: 390px;
+    height: 390px;
+    margin: 0 auto;
+    overflow: visible;
+}
 .skill-tree {
     position: relative;
     width: 650px;
-    aspect-ratio: 1;
-    margin: 0 auto -100px;
+    height: 650px;
+    margin: 0;
     transform: scale(0.6);
-    transform-origin: center top;
-    margin-left: auto;
-    animation: treeBreathing 10s ease-in-out infinite;
+    transform-origin: top left;
 }
 
 .tree {
@@ -125,12 +142,17 @@
 }
 
 @media (max-width: 768px) {
+    .skill-tree-wrapper {
+        width: 100%;
+        height: auto;
+        min-height: 250px;
+    }
+
     .skill-tree {
         width: 100%;
-        aspect-ratio: unset;
+        height: auto;
         transform: none;
         margin: 0 auto;
-        animation: none;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem 1rem;
