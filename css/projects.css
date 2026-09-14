@@ -135,6 +135,7 @@
 }
 
 .project-card h3 {
+    font-family: var(--font-title);
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--textoprincipal);
@@ -183,22 +184,81 @@
 }
 
 .project-stack {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-text);
     font-size: 0.9rem;
     color: var(--textosecundario);
     margin-bottom: 15px;
-    flex-grow: 1;
+}
+
+.project-stack img,
+.project-stack i,
+.project-stack svg {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .project-links {
-    font-family: var(--font-text);
-    font-size: 0.8rem;
-    color: var(--azumagico);
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    font-family: var(--font-text);
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    min-width: 46px;
+    padding: 0.35rem 0.55rem;
+    color: var(--textoprincipal);
+    background: var(--glass);
+    border: 1px solid rgba(17, 157, 164, 0.35);
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: var(--font-text);
+    font-size: 0.72rem;
+    font-weight: 600;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.project-links a img,
+.project-links a i,
+.project-links a svg {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--azumagico);
+    background: rgba(17, 157, 164, 0.12);
+    box-shadow: 0 6px 14px var(--shadow-blue);
+}
+
+.project-divider {
+    color: var(--textosecundario);
+    font-size: 1.2rem;
+    opacity: 0.65;
 }
 
 .card-back .card-content p {
+    font-family: var(--font-text);
     font-size: 0.9rem;
     color: var(--textosecundario);
     margin-bottom: 20px;
@@ -238,7 +298,6 @@
     pointer-events: none;
     z-index: 10;
 }
-
 
 .control-btn {
     pointer-events: auto;
@@ -310,6 +369,163 @@
     }
 }
 
+@media (max-width: 900px) {
+    #projects {
+        padding: 2rem 1.5rem 3rem;
+    }
+
+    .project-wrapper {
+        padding: 0;
+    }
+
+    .project-title {
+        margin-left: 0;
+        margin-right: auto;
+        margin-bottom: 3rem;
+    }
+
+    .project-title h2::after {
+        margin-left: 0;
+    }
+
+    .project-container {
+        height: 390px;
+        perspective: 1300px;
+    }
+
+    .project-navigation {
+        padding-inline: .25rem;
+    }
+
+    .control-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --card-width: 250px;
+        --card-height: 350px;
+    }
+
+    #projects {
+        padding: 2rem 1rem 3rem;
+    }
+
+    .project-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .project-title h2 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .project-title h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .project-container {
+        height: 390px;
+        perspective: 1100px;
+    }
+
+    .project-navigation {
+        display: none;
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-img {
+        height: 125px;
+    }
+
+    .card-content {
+        padding: 1rem;
+    }
+
+    .card-back .card-content p {
+        font-size: .82rem;
+        line-height: 1.45;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --card-width: 220px;
+        --card-height: 320px;
+    }
+
+    .project-container {
+        height: 350px;
+        perspective: 900px;
+    }
+
+    .project-img {
+        height: 110px;
+        margin-bottom: 10px;
+    }
+
+    .project-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 10px;
+    }
+
+    .project-name {
+        font-size: .7rem;
+        margin-bottom: 7px;
+    }
+
+    .project-stack {
+        gap: .35rem;
+        font-size: .75rem;
+        margin-bottom: 10px;
+    }
+
+    .project-links a {
+        min-width: 40px;
+        padding: .3rem .4rem;
+        font-size: .65rem;
+    }
+
+    .project-links a img,
+    .project-links a i,
+    .project-links a svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .card-back .card-content p {
+        font-size: .75rem;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    :root {
+        --card-width: 205px;
+        --card-height: 305px;
+    }
+
+    .project-container {
+        height: 335px;
+    }
+
+    .card-content {
+        padding: .85rem;
+    }
+
+    .project-img {
+        height: 95px;
+    }
+}
+
+/* 
 @media (max-width: 768px) {
     :root {
         --card-width: 250px;
@@ -317,19 +533,19 @@
         --carousel-radius: 300px;
     }
 
-    .title {
+    .project-title {
         font-size: 1.8rem;
     }
 
-    .carousel-container {
+    .project-container {
         height: 400px;
     }
 
-    .memory-card h3 {
+    .project-card h3 {
         font-size: 1.2rem;
     }
 
-    .memory-image {
+    .project-img {
         height: 120px;
     }
 }
@@ -341,11 +557,11 @@
         --carousel-radius: 250px;
     }
 
-    .title {
+    .project-title {
         font-size: 1.5rem;
     }
 
-    .carousel-container {
+    .project-container {
         height: 350px;
     }
-}
+} */

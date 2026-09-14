@@ -125,10 +125,11 @@
 
 @media (max-width: 768px) {
   #about {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1rem;
   }
 
   .about-container {
+    width: 100%;
     padding: 0;
   }
 
@@ -156,22 +157,26 @@
   }
 
   .about-body {
+    width: 100%;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
     padding-top: 0;
     text-align: center;
   }
 
   .imagen {
     width: min(260px, 70vw);
+    margin-inline: auto;
   }
 
   .about-content {
+    width: 100%;
     max-width: 650px;
     margin: 0 auto;
   }
 
   .about-content p {
+    font-size: .95rem;
     margin-bottom: 0.5rem;
     line-height: 1.6;
   }
@@ -179,15 +184,15 @@
 
 @media (max-width: 480px) {
   #about {
-    padding: 3.5rem 1rem;
+    padding-inline: .9rem;
   }
 
   .about-title h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .about-phrase {
-    font-size: 0.95rem;
+    font-size: .9rem;
   }
 
   .about-body {

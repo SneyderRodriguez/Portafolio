@@ -85,12 +85,6 @@
   transition: text-shadow 0.8s ease;
 }
 
-.hero-content.energy-glow h4 {
-  color: #35D6FF;
-  text-shadow: 0 0 12px rgba(53, 214, 255, 0.8);
-  transition: color 0.8s ease, text-shadow 0.8s ease;
-}
-
 .loader {
   --color-one: #119DA4;
   --color-two: #0C7489;
@@ -127,7 +121,7 @@
   transition: opacity 0.8s ease, filter 0.8s ease;
 }
 
- .loader .box {
+.loader .box {
   position: relative;
   width: 100px;
   height: 100px;
@@ -341,6 +335,7 @@
   0% {
     stroke-dashoffset: 0;
   }
+
   100% {
     stroke-dashoffset: -14;
   }
@@ -348,11 +343,13 @@
 
 
 @keyframes teslaCorePulse {
+
   0%,
   100% {
     r: 2;
     opacity: 0.7;
   }
+
   50% {
     r: 4;
     opacity: 1;
@@ -360,10 +357,12 @@
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: scale(var(--size)) translateY(0px);
   }
+
   50% {
     transform: scale(var(--size)) translateY(-15px);
   }
@@ -431,4 +430,85 @@
         rgba(104, 69, 216, 0.55) 68%,
         var(--color-two) 100%);
   }
+}
+@media (max-width: 900px) {
+    #hero {
+        padding-top: 9rem;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 2rem 3rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.4rem, 8vw, 4rem);
+    }
+
+    .hero-content h4 {
+        margin-bottom: 3rem;
+    }
+
+    .hero-history {
+        min-height: 120px;
+    }
+
+    .loader {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        min-height: auto;
+        padding-top: 8rem;
+        padding-bottom: 3rem;
+    }
+
+    .hero-container {
+        padding: 0 1.25rem 2rem;
+        gap: 1rem;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.1rem, 11vw, 3.4rem);
+        line-height: 1.12;
+    }
+
+    .hero-content h4 {
+        font-size: .9rem;
+        line-height: 1.5;
+        letter-spacing: .06em;
+        margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+        width: min(100%, 280px);
+        justify-content: center;
+        padding: .85rem 1.1rem;
+        font-size: .9rem;
+    }
+
+    .hero-history,
+    .loader,
+    .tesla-rays,
+    .energy-particle {
+        display: none !important;
+    }
+
+    .hero-content.energy-glow h1 {
+        text-shadow: none;
+    }
 }
