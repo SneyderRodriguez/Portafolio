@@ -164,7 +164,7 @@ Aplicación web para la gestión y organización de tareas personales.
 **Tecnologías:** HTML5 · CSS3 · JavaScript ES6+
 
 🔗 [Repositorio](https://github.com/SneyderRodriguez/Planificador-Tareas.github.io.git)
-🌐 [Demo](https://planificadortareas.netlify.app/)
+🌐 [Demo](https://thyratask.netlify.app/)
 
 ---
 
