@@ -1,5 +1,6 @@
 #skills {
     padding: 2rem 2.5rem 1rem;
+    margin-top: 0;
 }
 
 .skill-container {
@@ -57,7 +58,6 @@
     z-index: 5;
 }
 
-.skill-center,
 .skill-java,
 .skill-postgresql,
 .skill-nodejs,
@@ -83,10 +83,6 @@
     height: auto;
 }
 
-.skill-center img {
-    width: 140px;
-}
-
 .skill-js img {
     width: 65px;
 }
@@ -95,11 +91,6 @@
 .skill-postgresql img,
 .skill-java img {
     width: 75px;
-}
-
-.skill-center {
-    left: 290px;
-    top: 280px;
 }
 
 .skill-future {
@@ -144,8 +135,9 @@
 @media (max-width: 900px) {
     #skills {
         padding: 2rem 1.5rem 1rem;
+        padding-top: 1rem;
+        margin-top: 0;
     }
-
     .skill-container {
         padding: 0;
     }
@@ -159,11 +151,15 @@
     .skill-tree {
         transform: scale(.6);
     }
+        .project-navigation {
+        display: none;
+    }
 }
 
 @media (max-width: 576px) {
     #skills {
         padding: 2rem 1rem 1rem;
+        padding-top: 1rem;
     }
 
     .skill-title {
@@ -188,9 +184,6 @@
 }
 
 @media (max-width: 380px) {
-    .skill-center {
-        display: none;
-    }
 
     .skill-tree-wrapper {
         width: 300px;

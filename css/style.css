@@ -134,6 +134,7 @@ svg {
     box-shadow: 0 8px 40px var(--shadow-blue);
     transition: .3s ease;
 }
+
 .menu-toggle {
     display: none;
     width: 44px;
@@ -180,6 +181,7 @@ svg {
 .menu-toggle.is-active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
+
 .nav-cv {
     display: flex;
     align-items: center;
@@ -315,21 +317,38 @@ svg {
 }
 
 #contact {
-    min-height: 250px;
+    min-height: 280px;
     padding: 70px 8% 40px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    background:
-        linear-gradient(180deg,
-            var(--fondosecundario) 0%,
-            var(--fondoprincipal) 100%);
+    background: linear-gradient(180deg, var(--fondosecundario) 0%, var(--fondoprincipal) 100%);
     position: relative;
     overflow: hidden;
 }
 
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-logo {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    flex-shrink: 0;
+}
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
 .footer-divider {
     width: 220px;
     height: 2px;
@@ -340,18 +359,7 @@ svg {
             transparent);
     box-shadow:
         0 0 10px var(--shadow-blue);
-    margin-bottom: 10px;
 }
-
-.footer-logo {
-    position: absolute;
-    left: 8%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 125px;
-    height: 125px;
-}
-
 .footer-subtitle {
     font-family: var(--font-title);
     font-size: 1.3rem;
@@ -436,6 +444,25 @@ svg {
     text-align: center;
     margin-top: 15px;
 }
+
+section {
+    margin-block: 0;
+}
+
+section> :first-child {
+    margin-top: 0;
+}
+
+section> :last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    section {
+        scroll-margin-top: 84px;
+    }
+}
+
 @media (max-width: 768px) {
     html {
         scroll-padding-top: 90px;
@@ -570,7 +597,8 @@ svg {
         display: none;
     }
 
-    .footer-divider {
+    .footer-container {
+        grid-template-columns: 1fr;
         width: min(220px, 70vw);
     }
 

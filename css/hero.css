@@ -37,6 +37,7 @@
   color: var(--textosecundario);
   letter-spacing: .08em;
   text-transform: uppercase;
+  margin-bottom: 3rem;
 }
 
 .hero-cta {
@@ -78,6 +79,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-height: 0;
 }
 
 .hero-content.energy-glow h1 {
@@ -128,14 +130,12 @@
   border-radius: 50%;
   overflow: hidden;
   background:
-    radial-gradient(
-      circle at 38% 32%,
+    radial-gradient(circle at 38% 32%,
       rgba(255, 255, 255, 0.65) 0%,
       var(--color-three) 12%,
       var(--color-one) 35%,
       var(--color-four) 68%,
-      var(--color-two) 100%
-    );
+      var(--color-two) 100%);
   box-shadow:
     inset 10px 8px 15px rgba(255, 255, 255, 0.12),
     inset -12px -14px 18px rgba(0, 20, 45, 0.42);
@@ -144,11 +144,13 @@
   animation: innerEnergy 7s ease-in-out infinite;
   animation-play-state: paused;
 }
+
 .loader.is-active {
   animation-play-state: running;
   opacity: 1;
   filter: brightness(1) blur(0px);
 }
+
 .tesla-rays {
   position: absolute;
   inset: 0;
@@ -168,9 +170,7 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   filter:
-    drop-shadow(0 0 2px #35D6FF)
-    drop-shadow(0 0 5px #35D6FF)
-    drop-shadow(0 0 8px #7A5CFF);
+    drop-shadow(0 0 2px #35D6FF) drop-shadow(0 0 5px #35D6FF) drop-shadow(0 0 8px #7A5CFF);
   stroke-dasharray: 4 3;
   animation:
     teslaFlicker 0.8s ease-in-out infinite alternate,
@@ -212,9 +212,7 @@
 .tesla-core {
   fill: #FFFFFF;
   filter:
-    drop-shadow(0 0 3px #FFFFFF)
-    drop-shadow(0 0 8px #35D6FF)
-    drop-shadow(0 0 14px #7A5CFF);
+    drop-shadow(0 0 3px #FFFFFF) drop-shadow(0 0 8px #35D6FF) drop-shadow(0 0 14px #7A5CFF);
   animation: teslaCorePulse 1.1s ease-in-out infinite;
 }
 
@@ -243,13 +241,15 @@
   animation-play-state: running;
 }
 
-.loader.is-active .box{
+.loader.is-active .box {
   opacity: 1;
   transition: opacity 0.6s ease-in;
 }
-.loader.is-active .box{
+
+.loader.is-active .box {
   animation-play-state: running;
 }
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
@@ -307,6 +307,7 @@
     filter: hue-rotate(0deg);
   }
 }
+
 @keyframes teslaFlicker {
 
   0% {
@@ -431,84 +432,52 @@
         var(--color-two) 100%);
   }
 }
+
 @media (max-width: 900px) {
-    #hero {
-        padding-top: 9rem;
-    }
+  #hero {
+    min-height: auto;
+    padding-top: 9rem;
+    padding-bottom: 1rem;
+  }
 
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 2rem 3rem;
-        text-align: center;
-    }
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1.25rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 
-    .hero-content {
-        align-items: center;
-        max-width: 720px;
-        margin: 0 auto;
-    }
+  .hero-content {
+    align-items: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
 
-    .hero-content h1 {
-        font-size: clamp(2.4rem, 8vw, 4rem);
-    }
+  .hero-content h1 {
+    font-size: clamp(2.4rem, 8vw, 4rem);
+  }
 
-    .hero-content h4 {
-        margin-bottom: 3rem;
-    }
+  .hero-content h4 {
+    margin-bottom: 3rem;
+  }
 
-    .hero-history {
-        min-height: 120px;
-    }
+  .hero-cta {
+    justify-content: center;
+    padding: .85rem 1.1rem;
+    font-size: .9rem;
+  }
 
-    .loader {
-        margin-right: 0;
-    }
-}
+  .hero-history,
+  .loader,
+  .tesla-rays,
+  .energy-particle {
+    display: none !important;
+    min-height: 0;
+    height: 0;
+  }
 
-@media (max-width: 768px) {
-    #hero {
-        min-height: auto;
-        padding-top: 8rem;
-        padding-bottom: 3rem;
-    }
-
-    .hero-container {
-        padding: 0 1.25rem 2rem;
-        gap: 1rem;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(2.1rem, 11vw, 3.4rem);
-        line-height: 1.12;
-    }
-
-    .hero-content h4 {
-        font-size: .9rem;
-        line-height: 1.5;
-        letter-spacing: .06em;
-        margin-bottom: 2rem;
-    }
-
-    .hero-cta {
-        width: min(100%, 280px);
-        justify-content: center;
-        padding: .85rem 1.1rem;
-        font-size: .9rem;
-    }
-
-    .hero-history,
-    .loader,
-    .tesla-rays,
-    .energy-particle {
-        display: none !important;
-    }
-
-    .hero-content.energy-glow h1 {
-        text-shadow: none;
-    }
+  .hero-content.energy-glow h1 {
+    text-shadow: none;
+  }
 }

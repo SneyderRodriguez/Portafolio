@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const mobileMediaQuery = window.matchMedia("(max-width: 768px)");
+  const mobileMediaQuery = window.matchMedia("(max-width: 900px)");
   const reducedMotionMediaQuery = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
