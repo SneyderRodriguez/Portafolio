@@ -151,7 +151,8 @@
   filter: brightness(1) blur(0px);
 }
 
-.tesla-rays {
+/* ===== Placa base + Pila CMOS ===== */
+.board-svg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -159,61 +160,115 @@
   overflow: visible;
   pointer-events: none;
   z-index: 2;
-  opacity: 0;
+  opacity: 0.55;
   transition: opacity 0.6s ease-in;
 }
 
-.tesla-ray {
+.loader.is-active .board-svg {
+  opacity: 1;
+}
+
+.circuit-trace {
   fill: none;
-  stroke: #DFFFFF;
-  stroke-width: 1.2;
+  stroke: var(--color-three);
+  stroke-width: 1;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter:
-    drop-shadow(0 0 2px #35D6FF) drop-shadow(0 0 5px #35D6FF) drop-shadow(0 0 8px #7A5CFF);
-  stroke-dasharray: 4 3;
-  animation:
-    teslaFlicker 0.8s ease-in-out infinite alternate,
-    teslaFlow 1.2s linear infinite;
+  opacity: 0.45;
+  filter: drop-shadow(0 0 2px var(--color-three));
+  stroke-dasharray: 3 3;
+  animation: teslaFlicker 1.4s ease-in-out infinite alternate;
 }
 
-.ray-1 {
-  animation-delay: -0.2s;
+.circuit-node {
+  fill: #DFFFFF;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 3px #35D6FF);
 }
 
-.ray-2 {
-  animation-delay: -0.7s;
+.cmos-battery {
+  fill: rgba(212, 175, 55, 0.18);
+  stroke: var(--doradorunico, #D4AF37);
+  stroke-width: 1.4;
+  filter: drop-shadow(0 0 6px var(--shadow-gold, rgba(212, 175, 55, .35)));
+  transition: fill 0.6s ease, filter 0.6s ease;
 }
 
-.ray-3 {
-  animation-delay: -0.4s;
+.loader.is-active .cmos-battery {
+  fill: rgba(212, 175, 55, 0.32);
+  filter: drop-shadow(0 0 12px var(--shadow-gold, rgba(212, 175, 55, .6)));
 }
 
-.ray-4 {
-  animation-delay: -1s;
+.cmos-battery-rim {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 0.6;
 }
 
-.ray-5 {
-  animation-delay: -0.6s;
+.cmos-battery-label {
+  font-family: var(--font-text);
+  font-size: 6px;
+  font-weight: 600;
+  fill: var(--textoprincipal);
+  opacity: 0.7;
+  letter-spacing: .02em;
 }
 
-.ray-6 {
-  animation-delay: -0.1s;
+/* Panel tipo BIOS */
+.boot-panel {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 260px;
+  padding: .5rem .75rem;
+  background: var(--glass);
+  border: 1px solid rgba(17, 157, 164, .25);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  font-family: monospace, var(--font-text);
+  font-size: .68rem;
+  line-height: 1.5;
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 0.6s ease, border-color 0.6s ease;
 }
 
-.ray-7 {
-  animation-delay: -0.9s;
+.loader.is-active .boot-panel {
+  opacity: 1;
+  border-color: rgba(212, 175, 55, .35);
 }
 
-.ray-8 {
-  animation-delay: -0.35s;
+.boot-line {
+  margin: 0;
+  white-space: nowrap;
 }
 
-.tesla-core {
-  fill: #FFFFFF;
-  filter:
-    drop-shadow(0 0 3px #FFFFFF) drop-shadow(0 0 8px #35D6FF) drop-shadow(0 0 14px #7A5CFF);
-  animation: teslaCorePulse 1.1s ease-in-out infinite;
+.boot-error {
+  color: #ff8a80;
+  opacity: 0.85;
+}
+
+.loader.is-active .boot-error {
+  opacity: 0.35;
+  text-decoration: line-through;
+}
+
+.boot-code {
+  color: var(--color-three);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.6s ease 0.2s;
+}
+
+.loader.is-active .boot-code {
+  opacity: 1;
+}
+
+.boot-cursor {
+  animation: teslaFlicker 0.9s steps(2) infinite;
 }
 
 .energy-particle {
@@ -232,13 +287,6 @@
   z-index: 10;
   opacity: 0;
   animation: flyToContentSmooth 2.2s linear forwards;
-}
-
-.tesla-rays {
-  opacity: 1;
-  filter: brightness(1) blur(0px);
-  transition: opacity 0.6s ease-in, filter 0.6s ease-in;
-  animation-play-state: running;
 }
 
 .loader.is-active .box {
