@@ -234,11 +234,6 @@ svg {
     box-shadow: 0 10px 25px var(--shadow-blue);
 }
 
-.nav-list a:hover {
-    background: rgba(17, 157, 164, .08);
-    box-shadow: 0 0 18px var(--shadow-blue);
-}
-
 .nav-list span {
     position: absolute;
     top: calc(100% + 0.75rem);
