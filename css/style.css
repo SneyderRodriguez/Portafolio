@@ -183,12 +183,12 @@ svg {
 }
 
 .nav-cv {
-    position: relative;        /* ancla correctamente el tooltip .nav-cv span */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;                /* ajusta a la proporción real de tu pergamino */
-    height: 48px;
+    height: 34px;
+    aspect-ratio: 126.76 / 37.92;
     text-decoration: none;
     cursor: pointer;
     transition: transform .3s ease, box-shadow .3s ease;
@@ -197,7 +197,15 @@ svg {
 .nav-cv img {
     width: 100%;
     height: 100%;
-    object-fit: contain;        /* la imagen llena la caja sin deformarse */
+    object-fit: contain;
+}
+
+.nav-cv:hover {
+    transform: translateY(-2px);
+}
+
+.nav-cv:hover img {
+    filter: drop-shadow(0 6px 14px var(--shadow-blue));
 }
 
 .nav-list {
@@ -233,14 +241,6 @@ svg {
         background-color 0.3s ease,
         box-shadow 0.3s ease;
 }
-
-.nav-cv:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px var(--shadow-blue);
-}
-
-/* Apariencia compartida de la burbuja: para el pergamino (al hover)
-   y para las etiquetas del menú (siempre visibles) */
 .nav-list span,
 .nav-cv span {
     position: absolute;
@@ -274,14 +274,12 @@ svg {
     transform: translateX(-50%) rotate(45deg);
 }
 
-/* Solo el pergamino se comporta como tooltip: oculto hasta hover/focus */
+/* solo el pergamino oculta su texto hasta el hover/focus */
 .nav-cv span {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition:
-        opacity 0.25s ease,
-        visibility 0.25s ease;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .nav-cv:hover span,
@@ -290,8 +288,7 @@ svg {
     visibility: visible;
 }
 
-/* Los 4 íconos del menú: se mantiene el pequeño efecto de elevación,
-   pero ya no hay animación de aparición del texto (siempre está visible) */
+/* los 4 íconos del menú: texto siempre visible, solo se levanta el círculo */
 .nav-list a:hover,
 .nav-list a:focus-visible {
     background: rgba(17, 157, 164, 0.08);
