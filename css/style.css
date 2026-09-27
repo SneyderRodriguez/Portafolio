@@ -204,8 +204,49 @@ svg {
     transform: translateY(-2px);
 }
 
-.nav-cv:hover img {
-    filter: drop-shadow(0 6px 14px var(--shadow-blue));
+.nav-cv span {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 50%;
+    z-index: 20;
+    padding: 0.45rem 0.75rem;
+    color: var(--textoprincipal);
+    background: var(--fondosecundario);
+    border: 1px solid rgba(17, 157, 164, 0.45);
+    border-radius: 8px;
+    font-family: var(--font-text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transform: translate(-50%, 0);
+    box-shadow: 0 8px 20px var(--shadow-blue);
+}
+
+.nav-cv span::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: var(--fondosecundario);
+    border-top: 1px solid rgba(17, 157, 164, 0.45);
+    border-left: 1px solid rgba(17, 157, 164, 0.45);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+/* solo el pergamino oculta su texto hasta el hover/focus */
+.nav-cv span {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.nav-cv:hover span,
+.nav-cv:focus-visible span {
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-list {
@@ -241,59 +282,38 @@ svg {
         background-color 0.3s ease,
         box-shadow 0.3s ease;
 }
-.nav-list span,
-.nav-cv span {
+
+.nav-list span {
     position: absolute;
-    top: calc(100% + 0.75rem);
-    left: 50%;
-    z-index: 20;
-    padding: 0.45rem 0.75rem;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    padding-top: .35rem;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(3, 14, 42, .55), transparent 75%);
     color: var(--textoprincipal);
-    background: var(--fondosecundario);
-    border: 1px solid rgba(17, 157, 164, 0.45);
-    border-radius: 8px;
     font-family: var(--font-text);
-    font-size: 0.8rem;
-    font-weight: 600;
-    white-space: nowrap;
-    transform: translate(-50%, 0);
-    box-shadow: 0 8px 20px var(--shadow-blue);
-}
-
-.nav-list span::before,
-.nav-cv span::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    width: 8px;
-    height: 8px;
-    background: var(--fondosecundario);
-    border-top: 1px solid rgba(17, 157, 164, 0.45);
-    border-left: 1px solid rgba(17, 157, 164, 0.45);
-    transform: translateX(-50%) rotate(45deg);
-}
-
-/* solo el pergamino oculta su texto hasta el hover/focus */
-.nav-cv span {
-    opacity: 0;
-    visibility: hidden;
+    font-size: .6rem;
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: .02em;
+    text-transform: uppercase;
     pointer-events: none;
-    transition: opacity 0.25s ease, visibility 0.25s ease;
+    color: transparent;
+    -webkit-text-stroke: .5px rgba(255, 255, 255, .65);
+    transition: color .35s ease, -webkit-text-stroke-color .35s ease, text-shadow .35s ease;
 }
 
-.nav-cv:hover span,
-.nav-cv:focus-visible span {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* los 4 íconos del menú: texto siempre visible, solo se levanta el círculo */
-.nav-list a:hover,
-.nav-list a:focus-visible {
-    background: rgba(17, 157, 164, 0.08);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px var(--shadow-blue);
+.nav-list a:hover span,
+.nav-list a:focus-visible span {
+    color: #fff;
+    -webkit-text-stroke: .5px rgba(255, 205, 92, .9);
+    text-shadow:
+        0 0 6px rgba(255, 205, 92, .9),
+        0 0 14px rgba(255, 205, 92, .6);
 }
 
 .nav-list a:focus-visible,
@@ -348,12 +368,14 @@ svg {
     height: 125px;
     flex-shrink: 0;
 }
+
 .footer-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
 }
+
 .footer-divider {
     width: 220px;
     height: 2px;
@@ -365,6 +387,7 @@ svg {
     box-shadow:
         0 0 10px var(--shadow-blue);
 }
+
 .footer-subtitle {
     font-family: var(--font-title);
     font-size: 1.3rem;
@@ -574,18 +597,25 @@ section> :last-child {
 
     .nav-list span {
         position: static;
+        display: block;
+        inset: auto;
+        z-index: auto;
         padding: 0;
         background: transparent;
         border: 0;
         border-radius: 0;
         box-shadow: none;
-
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
         transform: none;
-
+        color: var(--textoprincipal);
         font-size: inherit;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: normal;
+        text-transform: none;
+        text-shadow: none;
         white-space: normal;
     }
 
