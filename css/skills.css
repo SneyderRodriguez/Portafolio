@@ -28,11 +28,9 @@
     height: 3px;
     margin-top: 12px;
     border-radius: 999px;
-    background: linear-gradient(
-        90deg,
+    background: linear-gradient(90deg,
             var(--azumagico),
-        transparent
-    );
+            transparent);
 }
 
 .skill-tree-wrapper {
@@ -56,6 +54,7 @@
     display: block;
     position: absolute;
     z-index: 5;
+    pointer-events: none;
 }
 
 .skill-java,
@@ -132,12 +131,68 @@
     left: 61px;
     top: 499px;
 }
+
+.skill-future,
+.skill-block {
+    cursor: default;
+    user-select: none;
+}
+
+.silueta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: auto;
+    color: #fff;
+    opacity: .12;
+}
+
+.candado {
+    position: relative;
+    z-index: 1;
+    width: 38px;
+    height: auto;
+    overflow: visible;
+    color: var(--doradorunico);
+    opacity: .8;
+    filter: drop-shadow(0 0 6px var(--shadow-gold));
+}
+
+.candado-arco {
+    transform-origin: 23px 18px;
+    /* pivota sobre la pata derecha */
+    transition: transform .35s ease;
+}
+
+.skill-future:hover .candado-arco {
+    transform: translateY(-2px) rotate(25deg);
+}
+
+.runa {
+    font-family: var(--font-title);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--doradorunico);
+    opacity: .65;
+    text-shadow: 0 0 10px var(--shadow-gold), 0 0 22px var(--shadow-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .candado-arco {
+        transition: none;
+    }
+}
+
 @media (max-width: 900px) {
     #skills {
         padding: 2rem 1.5rem 1rem;
         padding-top: 1rem;
         margin-top: 0;
     }
+
     .skill-container {
         padding: 0;
     }
@@ -151,7 +206,8 @@
     .skill-tree {
         transform: scale(.6);
     }
-        .project-navigation {
+
+    .project-navigation {
         display: none;
     }
 }
