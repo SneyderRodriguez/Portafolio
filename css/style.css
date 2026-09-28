@@ -323,6 +323,26 @@ svg {
     border-radius: 50px;
 }
 
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 205, 92, .9), transparent);
+    box-shadow: 0 0 8px rgba(255, 205, 92, .6);
+    transform: translateX(-50%);
+    transition: width .35s ease;
+    pointer-events: none;
+}
+
+.nav-list a:hover::after,
+.nav-list a:focus-visible::after {
+    width: 80%;
+}
+
 .skip-link {
     position: fixed;
     top: 1rem;
