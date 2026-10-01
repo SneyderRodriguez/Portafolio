@@ -37,7 +37,59 @@ body {
     background-color: var(--fondoprincipal);
     color: var(--textoprincipal);
 }
+#nether-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background-color: var(--fondoprincipal);
+    overflow: hidden;
+    pointer-events: none; 
+}
 
+.nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    mix-blend-mode: screen;
+}
+
+.nebula-1 {
+    top: 40%;
+    left: -10%;
+    width: 120vw;
+    height: 25vh;
+    background: radial-gradient(ellipse at center, var(--azumagico) 0%, transparent 60%);
+    transform: rotate(-20deg);
+    opacity: 0.12;
+    animation: flowNebula 15s ease-in-out infinite alternate;
+}
+
+.nebula-2 {
+    top: 35%;
+    left: 10%;
+    width: 100vw;
+    height: 15vh;
+    background: radial-gradient(ellipse at center, var(--azulbrillante) 0%, transparent 60%);
+    transform: rotate(-15deg);
+    opacity: 0.08; /* Aún más tenue */
+    animation: flowNebula 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes flowNebula {
+    0% { transform: rotate(-20deg) scale(1) translateY(0); }
+    100% { transform: rotate(-18deg) scale(1.05) translateY(-20px); }
+}
+
+#nether-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 img,
 svg {
     max-width: 100%;
